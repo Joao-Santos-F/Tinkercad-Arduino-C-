@@ -1,0 +1,42 @@
+# Como o link anterior falhou, vamos criar o PDF manualmente com uma biblioteca alternativa: ReportLab
+from reportlab.lib.pagesizes import A4
+from reportlab.pdfgen import canvas
+
+# Caminho do novo PDF
+manual_pdf_path = "/mnt/data/Fluxograma_Notas_Aluno_Manual.pdf"
+
+# Criar o PDF
+c = canvas.Canvas(manual_pdf_path, pagesize=A4)
+width, height = A4
+
+# Título
+c.setFont("Helvetica-Bold", 16)
+c.drawString(100, height - 50, "Fluxograma - Média e Situação do Aluno")
+
+# Conteúdo do fluxograma em estilo textual
+c.setFont("Helvetica", 12)
+lines = [
+    "Início",
+    "↓",
+    "Ler 4 notas do aluno",
+    "↓",
+    "Calcular a média",
+    "↓",
+    "Média ≥ 7?",
+    "→ Sim → Aprovado → Fim",
+    "→ Não",
+    "↓",
+    "Verificar se Média < 5",
+    "→ Sim → Reprovado → Fim",
+    "→ Não → Recuperação → Fim"
+]
+
+# Inserir linhas no PDF
+y = height - 100
+for line in lines:
+    c.drawString(80, y, line)
+    y -= 20
+
+# Salvar o PDF
+c.save()
+manual_pdf_path
