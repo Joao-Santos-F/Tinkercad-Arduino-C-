@@ -1,10 +1,10 @@
 // C++ code
 //Faça um programa que receba a medida em polegadas e exiba esse número em
 //centímetros.
-const float POL_TO_CM = 2.54; // Constante de conversão
+float Polegadas = 2.54;
 
 float converterParaCM(float polegadas) {
-  return polegadas * POL_TO_CM;
+  return polegadas * Polegadas;
 }
 
 void setup() {
@@ -13,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("\nDigite as polegadas:");
+  Serial.println("Digite as polegadas:");
   
   while (!Serial.available());
   float polegadas = Serial.parseFloat();
