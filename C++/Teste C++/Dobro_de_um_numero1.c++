@@ -3,7 +3,7 @@
 
 
 void setup() {
-  Serial.begin(9600); // Inicia a comunicação serial
+  Serial.begin(9600); 
   Serial.println("Calculadora do Dobro");
 }
 
