@@ -10,7 +10,7 @@ void setup() {
 void loop() {
   int numero, dobro;
   
-  Serial.println("\nDigite um numero inteiro:");
+  Serial.println("Digite um numero inteiro:");
   
   // Aguarda entrada do usuário
   while (!Serial.available());
