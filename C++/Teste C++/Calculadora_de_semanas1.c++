@@ -11,17 +11,17 @@ void setup()
 
 void loop()
 {
-  Serial.println("digite o ano que nasceu");//mostra mnsg na tela
-  while ( !Serial.available() ); //espera o usuario dar enter
-  adn = Serial.parseInt();//transforma a idade digitada em numero
+  Serial.println("digite o ano que nasceu");
+  while ( !Serial.available() );
+  adn = Serial.parseInt();
 
-  Serial.println("em que ano voce esta");//mostra mnsg na tela
-  while ( !Serial.available() ); //espera o usuario dar enter
-  ano = Serial.parseInt();//transforma a idade digitada em numero
+  Serial.println("em que ano voce esta");
+  while ( !Serial.available() );
+  ano = Serial.parseInt();
 
   long idadeano = ano - adn;
   long idademes = idadeano * 12;
   long idadesemanas = idademes * 4;
   
-    Serial.println("idade em semanas: " + String(idadesemanas) ); //imprime o texto
+    Serial.println("idade em semanas: " + String(idadesemanas) );
 }
