@@ -4,8 +4,7 @@
 // / (altura * altura).
 
 void setup() {
-  Serial.begin(9600); // Inicia a comunicação serial
-  while (!Serial); // Espera a porta serial estar pronta (para alguns Arduinos)
+  Serial.begin(9600);
   
   Serial.println("Calculadora de IMC");
   Serial.println("------------------");
@@ -20,21 +19,21 @@ void loop() {
   
   // Solicita e recebe o nome
   Serial.println("\nDigite seu nome:");
-  while (!Serial.available()); // Aguarda entrada
+  while (!Serial.available());
   nome = Serial.readStringUntil('\n');
-  nome.trim(); // Remove espaços e quebras de linha
+  nome.trim();
   
   // Solicita e recebe o peso
   Serial.println("Digite seu peso (kg):");
   while (!Serial.available());
   peso = Serial.parseFloat();
-  while (Serial.available()) Serial.read(); // Limpa buffer
+  while (Serial.available()) Serial.read();
   
   // Solicita e recebe a altura
   Serial.println("Digite sua altura (m):");
   while (!Serial.available());
   altura = Serial.parseFloat();
-  while (Serial.available()) Serial.read(); // Limpa buffer
+  while (Serial.available()) Serial.read(); 
   
   // Calcula o IMC
   imc = peso / (altura * altura);
@@ -50,7 +49,7 @@ void loop() {
   Serial.print(altura);
   Serial.println(" m");
   Serial.print("IMC: ");
-  Serial.println(imc, 2); // Mostra com 2 casas decimais
+  Serial.println(imc, 2); 
   
   // Classificação do IMC
   Serial.print("Classificacao: ");
@@ -69,5 +68,5 @@ void loop() {
   }
   
   Serial.println("------------------");
-  delay(3000); // Espera 3 segundos antes de reiniciar
+  delay(3000); 
 }
