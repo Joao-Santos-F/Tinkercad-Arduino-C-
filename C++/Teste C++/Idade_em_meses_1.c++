@@ -17,9 +17,9 @@ void loop()
 {
   //Entrada
   
-  Serial.println("digite sua idade em anos");//mostra mnsg na tela
-  while ( !Serial.available() ); //espera o usuario dar enter
-  idade = Serial.parseInt();//transforma a idade digitada em numero
+  Serial.println("digite sua idade em anos");
+  while ( !Serial.available() ); 
+  idade = Serial.parseInt();
   
   //processamento
  
@@ -29,10 +29,10 @@ void loop()
   idadeMinutos = idade * 365 * 24 * 60;
   
   //Saida
-  Serial.println("idade em meses: " + String(idadeMeses) ); //imprime o texto
-  Serial.println("idade em dias: " + String(idadeDias) ); //imprime o texto
-  Serial.println("idade em horas: " + String(idadeHoras) ); //imprime o texto
-  Serial.println("idade em minutos: " + String(idadeMinutos) ); //imprime o texto
+  Serial.println("idade em meses: " + String(idadeMeses) );
+  Serial.println("idade em dias: " + String(idadeDias) );
+  Serial.println("idade em horas: " + String(idadeHoras) ); 
+  Serial.println("idade em minutos: " + String(idadeMinutos) ); 
   
   delay(1000);
 }
